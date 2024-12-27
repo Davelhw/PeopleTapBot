@@ -32,7 +32,7 @@ const bot = new Bot(botToken);
 const JWT_SECRET = process.env.JWT_SECRET;
 const INVITE_SECRET = process.env.INVITE_SECRET;
 const baseBotLink = "https://t.me/satoshi_x_ppl_bot";
-const baseFrontendUrl = "https://tdev.manik.wtf:6001";
+const baseFrontendUrl = "https://174.138.29.43:6001";
 
 const initial = () => {
   return {};
@@ -42,7 +42,7 @@ let inviteData = null;
 
 bot.use(session({ initial }));
 
-let play_url = "https://tdev.manik.wtf";
+let play_url = "https://174.138.29.43:6001";
 
 function restartServer() {
   console.log("Attempting to restart the server...");
