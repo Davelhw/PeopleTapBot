@@ -32,7 +32,7 @@ const bot = new Bot(botToken);
 const JWT_SECRET = process.env.JWT_SECRET;  
 const INVITE_SECRET = process.env.INVITE_SECRET;
 const baseBotLink = "https://t.me/satoshi_x_ppl_bot";
-const baseFrontendUrl = "http://174.138.29.43";
+const baseFrontendUrl = "https://tbot.manik.wtf";
 
 const initial = () => {
   return {};
