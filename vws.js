@@ -42,7 +42,7 @@ let inviteData = null;
 
 bot.use(session({ initial }));
 
-let play_url = ""; //blank for now
+let play_url = "http://tdev.manik.wtf";
 
 function restartServer() {
   console.log("Attempting to restart the server...");
