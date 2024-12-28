@@ -124,6 +124,8 @@ async function uploadProfilePhotoToS3(photoUrl, userId) {
 bot.command("start", async (ctx) => {
   const userid = ctx.from.username;
   const tgid = ctx.from.id;
+  const tg_uid = ctx.from.t_id;
+  console.log("tg uid:", tg_uid);
   let firstname = "";
   let lastname = "";
 
