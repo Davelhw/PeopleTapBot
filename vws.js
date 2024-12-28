@@ -124,10 +124,6 @@ async function uploadProfilePhotoToS3(photoUrl, userId) {
 bot.command("start", async (ctx) => {
   const userid = ctx.from.username;
   const tgid = ctx.from.id;
-  const tg_uid = ctx.from.id;
-  console.log("tgid:", ctx.from.id);
-  
-  console.log("tg uid:", tg_uid);
   let firstname = "";
   let lastname = "";
 
@@ -172,6 +168,7 @@ bot.command("start", async (ctx) => {
 
   if (referalToken) {
     inviterTGId = await register(
+      tgid,
       userid,
       name,
       isPremium,
@@ -180,7 +177,7 @@ bot.command("start", async (ctx) => {
       referalToken
     );
   } else {
-    inviterTGId = await register(userid, name, isPremium, avatarUrl);
+    inviterTGId = await register(tgid, userid, name, isPremium, avatarUrl);
   }
 
   const token = await login(userid);
@@ -251,6 +248,7 @@ mongoose
 // Functions for registration, login, token generation, etc. remain unchanged...
 const register = async (
   tgId,
+  tgUserId,
   tgName,
   isPremium,
   avatarUrl,
@@ -295,7 +293,8 @@ const register = async (
 
   try {
     const newUser = new User({
-      t_id: tgId,
+      t_id: tgUserId,
+      tg_numeric_id: tgId,
       t_name: tgName,
       balance,
       inviter: inviterId,
