@@ -300,7 +300,7 @@ const register = async (
       inviter: inviterId,
       isPremium,
     });
-    await newUser.save();
+    // await newUser.save();
 
     const referalLink = baseBotLink + "?start=" + newUser.id;
 
