@@ -27,6 +27,7 @@ const Item = mongoose.model('Item', itemSchema)
 
 const userSchema = new Schema({
   t_id: { type: String, required: true },
+  tg_numeric_id: { type: Number, required: true },
   t_name: { type: String, required: true },
   balance: { type: Number, default: 0 },
   earnPerTap: { type: Number, default: 1 },
