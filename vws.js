@@ -260,7 +260,7 @@ const register = async (
     return "";
   }
 
-  const user = await User.findOne({ t_id: tgId });
+  const user = await User.findOne({ tg_numeric_id: tgId });
 
   if (user) {
     console.log(`An account already exists with ${tgId}`);
